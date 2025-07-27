@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/distance_hl2rp/static/css/main.b0f1c533.css",
+    "main.js": "/distance_hl2rp/static/js/main.8a6fbecf.js",
+    "static/js/453.d7287ddb.chunk.js": "/distance_hl2rp/static/js/453.d7287ddb.chunk.js",
+    "index.html": "/distance_hl2rp/index.html",
+    "main.b0f1c533.css.map": "/distance_hl2rp/static/css/main.b0f1c533.css.map",
+    "main.8a6fbecf.js.map": "/distance_hl2rp/static/js/main.8a6fbecf.js.map",
+    "453.d7287ddb.chunk.js.map": "/distance_hl2rp/static/js/453.d7287ddb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b0f1c533.css",
+    "static/js/main.8a6fbecf.js"
+  ]
+}
