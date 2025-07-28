@@ -66,7 +66,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   background: rgba(66, 66, 66, 1);
   backdrop-filter: blur(10px);
@@ -83,7 +83,6 @@ body {
 }
 
 textarea {
-  width: 100%;
   height: 200px;
   background: rgba(51, 51, 51, 1);
   color: #fff;
@@ -94,6 +93,7 @@ textarea {
   font-size: 14px;
   margin-bottom: 20px;
   transition: all 0.3s ease;
+  resize: none;
 }
 
 .input-group {
@@ -164,4 +164,179 @@ button:active {
     padding: 20px;
     margin: 0 10px;
   }
+}
+
+.example {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.example h4 {
+  margin-top: 0;
+  color: #8BC34A;
+}
+
+.example pre {
+  margin: 10px 0 0 0;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+/* Заголовки в справке */
+.info-box h3 {
+  color: #4CAF50;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.info-box ol {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.info-box ol li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Layout для боковой панели */
+.content-wrapper {
+  display: flex;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Боковая информационная панель */
+.info-panel {
+  flex: 1;
+  background: rgba(66, 66, 66, 1);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-height: calc(100vh - 320px);
+  overflow-y: auto;
+  border: 1px solid #535353;
+  max-width: 30%;
+  display: flex;
+}
+
+.info-content h2 {
+  color: #A6A6A6;
+  margin-top: 0;
+  font-size: 1.8rem;
+}
+
+.info-content h3 {
+  color: #B0B0B0;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.info-content ul,
+.info-content ol {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.info-content li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+.info-content code {
+  background: rgba(51, 51, 51, 1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  border: 1px solid #444;
+}
+
+/* Калькулятор */
+.calculator-container {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Адаптивность для боковой панели */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  .info-panel {
+    max-height: none;
+  }
+}
+
+/* Кнопка переключения справки */
+.help-toggle {
+  background: rgba(166, 166, 166, 0.8);
+  color: rgb(255, 255, 255);
+  border: 1px solid #acacac;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: auto;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.help-toggle:hover {
+  background: rgba(166, 166, 166, 1);
+  transform: translateY(-1px);
+}
+
+/* Содержимое справки */
+.help-content {
+  background: rgba(166, 166, 166, 1);
+  border-left: 3px solid #4CAF50;
+  padding: 15px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.help-content h3 {
+  margin-top: 0;
+  color: #515752;
+  font-size: 1.2rem;
+}
+
+.help-content ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+.help-content li {
+  margin-bottom: 8px;
+  color: #ccc;
+}
+
+.help-content code {
+  background: rgba(0,0,0,0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.help-content pre {
+  background: rgba(0,0,0,0.3);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  overflow-x: auto;
 }

@@ -4,6 +4,7 @@ import './styles.css';
 function App() {
   const [input, setInput] = useState('');
   const [result, setResult] = useState('');
+  const [showHelp, setShowHelp] = useState(false);
 
   const parsePos = (line) => {
     const match = line.match(/setpos\s+([-\d.]+)\s+([-\d.]+)\s+([-\d.]+)/);
@@ -73,17 +74,75 @@ function App() {
       <div className="app-header-body-border"/>
       {/* Основной контент */}
       <main className="app-main">
-        <div className="container">
-          <p>Вставьте строки из консоли (setpos):</p>
-        <div className="input-group">
-          <textarea
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="setpos -5000 3000 200;setang ..."
-          />
-          <button onClick={calculate}>Рассчитать расстояние</button>
-        </div>
-          <pre className="output">{result}</pre>
+        <div className="content-wrapper">
+          {/* Боковая информационная панель */}
+        
+
+          {/* Основной калькулятор */}
+          <div className="calculator-container">
+            <div className="container">
+              <p>Вставьте строки из консоли (setpos):</p>
+              
+              <div className="input-group">
+                <textarea
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  placeholder="setpos -5000 3000 200;setang ..."
+                />
+                <button onClick={calculate}>Рассчитать расстояние</button>
+              </div>
+              
+              <pre className="output">{result}</pre>
+            </div>
+          </div>
+
+          {!showHelp && (<button 
+            className="help-toggle"
+            onClick={() => setShowHelp(!showHelp)}
+          >
+            {showHelp ? '▼ Скрыть справку' : '📄'}
+          </button>
+          )}
+
+          {showHelp && (<aside className="info-panel">
+            <div className="info-content">
+              <h2>ℹ️ Справка и инструкция</h2>
+              
+              <h3>🎮 Как получить координаты:</h3>
+              <ol>
+                <li>Открой консоль (<code>~</code>)</li>
+                <li>Пропиши команду: <code>getpos</code></li>
+                <li>Скопируй строку с <code>setpos</code></li>
+                <li>Перемести персонажа и повтори</li>
+              </ol>
+
+              <h3>💻 Как использовать калькулятор:</h3>
+              <ol>
+                <li>Вставь все строки <code>setpos</code> слева</li>
+                <li>Нажми "Рассчитать расстояние"</li>
+                <li>Получи результат справа</li>
+              </ol>
+
+              <h3>🎯 Применение в бою:</h3>
+              <ul>
+                <li><strong>Дальность стрельбы:</strong> Проверка досягаемости оружия</li>
+                <li><strong>Перемещение:</strong> Лимит метров за ход</li>
+              </ul>
+
+              <div className="example">
+                <h4>📌 Пример ввода:</h4>
+                <pre>{`setpos -5000 3000 200;setang 0 0 0
+setpos -4500 3200 200;setang 0 0 0
+setpos -4000 3400 250;setang 0 0 0`}</pre>
+              </div>
+            </div>
+            <button 
+            className="help-toggle"
+            onClick={() => setShowHelp(!showHelp)}
+          >
+            x
+          </button>
+          </aside>)}
         </div>
       </main>
     </div>
